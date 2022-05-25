@@ -1,0 +1,46 @@
+
+
+
+body {
+    color: white;
+    background-color: black;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subData {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30%;
+}
+.subData img {
+    width: 50px;
+    height: 50px;
+}
+.side {
+    display: flex;
+    position: relative;
+    
+}
+.side p {
+    margin-left: 30px;
+    font-size: 17px;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .subData {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        padding: 0 0;
+}
+

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Price Track</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" href="img/ethereum.ico?v=2" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <script src="https://kit.fontawesome.com/a17111d927.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Current Price Track</h1>
+    <div class="display">
+        <% data.map(dat => { %>
+            <div class="subData">
+                <div class="side">
+                    <img src="<%= dat.image %>"/>
+                    <p><%= dat.symbol %></p>
+                </div>
+                <p><%= dat.current_price %></p>
+                <p><%= dat.price_change_percentage_24h.toFixed(2) %> %</p>
+            </div>
+       <% }) %>
+
+    </div>
+
+    
+</body>
+</html>
+
