@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a17111d927.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Current Price Track</h1>
+    <h1>Current Price <br> Track</h1>
     <div class="display">
         <% data.map(dat => { %>
             <div class="subData">
@@ -19,7 +19,7 @@
                     <p><%= dat.symbol %></p>
                 </div>
                 <p><%= dat.current_price %></p>
-                <p><%= dat.price_change_percentage_24h.toFixed(2) %> %</p>
+                <p class="<%= dat.price_change_percentage_24h < 0 ? 'red' : 'green' %>" ><%= dat.price_change_percentage_24h.toFixed(2) %> %</p>
             </div>
        <% }) %>
 
