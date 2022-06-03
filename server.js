@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const axios = require('axios');
+const cors = require('cors');
 
 app.use(express.urlencoded({extended: false}))
 
@@ -11,6 +12,7 @@ app.set("views", path.join(__dirname, "views"))
 
 // connecting public to server js
 app.use(express.static(path.join(__dirname, "public")))
+app.use(cors());
 
 function getWeather(req, res, next) {
     req.isWeather = false;
@@ -19,7 +21,7 @@ function getWeather(req, res, next) {
 
 
 
-app.get('/', getWeather, (req, res)=> {
+app.get('/', getWeather, async(req, res)=> {
 
 
     // if (req.isWeather) {
