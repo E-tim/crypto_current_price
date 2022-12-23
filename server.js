@@ -36,6 +36,7 @@ app.get('/', getWeather, async(req, res)=> {
             data: results.data
         })
     } )
+  
     
 })
 
