@@ -36,9 +36,14 @@ app.get('/', getWeather, async(req, res)=> {
             data: results.data
         })
     } )
-  
-    
 })
+
+app.get('/crypto', (req, res) => {
+    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false').
+    then( results => {
+       res.json(results.data);
+    } )
+  })
 
 app.post('/users', (req, res)=> {
     if (req.body.name === 'tim' && req.body.age === 22) {
